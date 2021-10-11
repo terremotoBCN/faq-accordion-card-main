@@ -1,3 +1,18 @@
 .hidden {
     display: none;
 }
+
+.attribution
+{
+    font-size: xx-small;
+    color: var(--light-grayish-blue);
+    text-shadow: 1px 1px 1px var(--darkness-grayish-blue);
+
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+
+    & > a {
+        color: var(--light-grayish-blue);
+    }
+}
