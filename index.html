@@ -10,79 +10,85 @@
 
 	<title>Frontend Mentor | FAQ Accordion Card</title>
 
-	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-	<style>
-		.attribution {
-			font-size: 11px;
-			text-align: center;
-		}
-
-		.attribution a {
-			color: hsl(228, 45%, 44%);
-		}
-	</style>
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/style.css" id="theme-style">
+	<script defer  src="./js/behavior.js"></script>
 </head>
 
-<body>
-	<div id="faq" class="faq__component">
-		<div id="faq__decorations" class="faq__decorations">
-			<img class="faq__decorations-woman" src="./images/illustration-woman-online-desktop.svg"
-				alt="illustration-woman-online-desktop">
-			<img class="faq__decorations-box" src="./images/illustration-box-desktop.svg" alt="">
+<body class="content">
+
+	<!-- CONTENT HEADER -->
+	<header class="content__header">
+		<div class="header__theme-switcher">
+			<input type="checkbox" name="theme-switcher" id="theme-switcher" onchange="console.log(document.getElementById('theme-style').href='hello.css');" tabindex="0" accesskey="t" title="Change theme [t]">
+			<label for="theme-switcher">dark theme</label>
 		</div>
-		<main id="faq_main" class="faq__main">
-			<h1 class="faq__header">FAQ</h1>
-			<article id="article__01" class="faq__article">
-				<h2 class="faq__article-title">How many team members can I invite?
-				</h2>
-				<p class="faq__article-text">You can invite up to 2 additional users on the Free plan. There is no limit
-					on
-					team members for the Premium plan.
-				</p>
-			</article>
-			<article id="article__02" class="faq__article">
-				<h2 class="faq__article-title">What is the maximum file upload size?
-				</h2>
-				<p class="faq__article-text">No more than 2GB. All files in your account must fit your allotted storage
-					space.
-				</p>
-			</article>
-			<article id="article__03" class="faq__article">
-				<h2 class="faq__article-title">How do I reset my password?
-				</h2>
-				<p class="faq__article-text">Click “Forgot password” from the login page or “Change password” from your
-					profile
-					page.
-					A reset link will be emailed to you.
-				</p>
-			</article>
-			<article id="article__04" class="faq__article">
-				<h2 class="faq__article-title">Can I cancel my subscription?
-				</h2>
-				<p class="faq__article-text"> Yes! Send us a message and we’ll process your request no questions asked.
-				</p>
-			</article>
-			<article id="article__05" class="faq__article">
-				<h2 class="faq__article-title">Do you provide additional support?
-				</h2>
-				<p class="faq__article-text">Chat and email support is available 24/7. Phone lines are open during
-					normal
-					business
-					hours.
-				</p>
-			</article>
-		</main>
-	</div>
+	</header>
 
-	<hr class="hidden">
+	<hr class="hidden"> <!-- separator -->
+	
+	<!-- MAIN CONTENT -->
+	<main class="content__main">
+		<div id="faq" class="faq__component">
+			<div id="faq__decorations" class="faq__decorations">
+				<img class="faq__decorations-woman" src="./images/illustration-woman-online-desktop.svg"
+					alt="illustration-woman-online-desktop">
+				<img class="faq__decorations-box" src="./images/illustration-box-desktop.svg" alt="">
+			</div>
+			<section id="faq_main" class="faq__main">
+				<h1 class="faq__header">FAQ</h1>
+				<article id="article__01" class="faq__article" tabindex="1" accesskey="1" accessKeyLabel="$">
+					<h2 class="faq__article-title">How many team members can I invite?
+					</h2>
+					<p class="faq__article-text">You can invite up to 2 additional users on the Free plan. There is no
+						limit on team members for the Premium plan.
+					</p>
+				</article>
+				<article id="article__02" class="faq__article" tabindex="2" accesskey="2" accessKeyLabel="$">
+					<h2 class="faq__article-title">What is the maximum file upload size?
+					</h2>
+					<p class="faq__article-text">No more than 2GB. All files in your account must fit your allotted
+						storage space.
+					</p>
+				</article>
+				<article id="article__03" class="faq__article" tabindex="3" accesskey="3" accessKeyLabel="$">
+					<h2 class="faq__article-title">How do I reset my password?
+					</h2>
+					<p class="faq__article-text">Click “Forgot password” from the login page or “Change password” from
+						your profile page. A reset link will be emailed to you.
+					</p>
+				</article>
+				<article id="article__04" class="faq__article" tabindex="4" accesskey="4" accessKeyLabel="$">
+					<h2 class="faq__article-title">Can I cancel my subscription?
+					</h2>
+					<p class="faq__article-text"> Yes! Send us a message and we’ll process your request no questions
+						asked.
+					</p>
+				</article>
+				<article id="article__05" class="faq__article" tabindex="5" accesskey="5" accessKeyLabel="$">
+					<h2 class="faq__article-title">Do you provide additional support?
+					</h2>
+					<p class="faq__article-text">Chat and email support is available 24/7. Phone lines are open during
+						normal
+						business
+						hours.
+					</p>
+				</article>
+			</section>
+		</div>
+	</main>
 
-	<div class="attribution">
-		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-		Coded by <a href="https://github.com/terremotoBCN">Terremoto BCN</a>.
-	</div>
+	<hr class="hidden">	<!-- separator -->
+
+	<!-- CONTENT FOOTER -->
+	<footer class="content__footer">
+		<div class="attribution">
+			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+			Coded by <a href="https://github.com/terremotoBCN">Terremoto BCN</a>.
+		</div>
+	</footer>
+
 	<!-- BEHAVIOR -->
-	<script src="./js/behavior.js"></script>
+	<!-- <script src="./js/behavior.js"></script> -->
 </body>
 
 </html>

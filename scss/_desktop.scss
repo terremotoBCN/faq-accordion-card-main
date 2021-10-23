@@ -1,0 +1,24 @@
+// COMPONENT
+.faq__component {
+    width: 920px;
+
+    flex-direction: row;
+}
+
+// DECOTATION
+.faq__decorations {
+    width: 50%;
+}
+
+/***	FAQ MAIN - DSK	***/
+.faq__main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    .faq__header {
+        text-align: left;
+    }
+
+}

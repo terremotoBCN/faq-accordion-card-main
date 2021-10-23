@@ -33,6 +33,14 @@ dd {
   margin: 0;
 }
 
+/*************************/
+/*  by TerremotoBCN     */
+html {
+  height: 100%;
+  min-height: 100vh;
+}
+
+/*************************/
 /* Set core body defaults */
 body {
   min-height: 100vh;
@@ -106,21 +114,22 @@ select {
 /*	by FrontEnd Mentor - https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam/hub/faq-accordion-card-L6YA9Ss1X	*/
 :root {
   /***	Layouts 	***/
-  --layout-mobile:	"375px";
-  --layout-desktop:	"1440px";
+  --layout-mobile: "375px";
+  --layout-desktop: "1440px";
+  --mediaquery-desktop: 1440px;
   /***	Colors	***/
-  --dark-blue: 	hsl(238, 29%, 16%);
-  --soft-red: 	hsl(14, 88%, 65%);
-  --soft-violet:	hsl(273, 75%, 66%);
-  --soft-blue:	hsl(240, 73%, 65%);
+  --dark-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
   /***	Gradient	***/
-  --bg-gradient:	linear-gradient(0deg, var(--soft-blue), var(--soft-violet));
+  --bg-gradient: linear-gradient(0deg, var(--soft-blue), var(--soft-violet));
   /***	Neutrals	***/
   /*	Text	*/
-  --darkness-grayish-blue:	hsl(237, 12%, 33%);
-  --dark-grayish-blue:		hsl(240, 6%, 50%);
+  --darkness-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
   /*	Dividers	*/
-  --light-grayish-blue:		hsl(240, 5%, 91%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
   /***	Typography	***/
   --font-size: 12px;
   --font-family: 'Kumbh Sans', sans-serif;
@@ -130,6 +139,7 @@ select {
 
 html,
 body {
+  background-color: var(--soft-blue, #6565e7);
   background-image: var(--bg-gradient);
   /*	for debbugin	*/
   background-repeat: no-repeat;
@@ -137,20 +147,7 @@ body {
   font-family: var(--font-family, sans-serif);
   font-size: var(--font-size, 0.8em);
   font-weight: var(--font-regular, normal);
-  color: var(--darkness-grayish-blue, #444);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  color: var(--light-grayish-blue);
 }
 
 body {
@@ -169,16 +166,54 @@ body {
 	*/
 }
 
+.content__header {
+  position: fixed;
+  z-index: 10;
+  text-align: right;
+  width: 100%;
+  padding: 1rem;
+}
+
+.content__header .header__theme-switcher > label {
+  cursor: pointer;
+}
+
+.content__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 .faq__component {
   /* for debuggin */
   margin: 12rem auto 4rem auto;
   padding: 20pt;
   width: 328px;
-  background-color: #fff;
+  min-height: 510px;
   border-radius: 20pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
   background-image: url("../images/bg-pattern-mobile.svg");
   background-repeat: no-repeat;
   background-position: top center;
+  color: var(--dark-grayish-blue, #444);
   -webkit-box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue);
           box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue);
 }
@@ -248,6 +283,12 @@ h1,
   color: var(--dark-grayish-blue);
   padding: 12pt 0;
   cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 1s;
+  transition: -webkit-box-shadow 1s;
+  transition: box-shadow 1s;
+  transition: box-shadow 1s, -webkit-box-shadow 1s;
+  -webkit-box-shadow: 0px 0px 0px 0px var(--dark-grayish-blue);
+          box-shadow: 0px 0px 0px 0px var(--dark-grayish-blue);
 }
 
 .faq__article h2,
@@ -268,13 +309,23 @@ h1,
   top: 0;
   right: 0;
   opacity: 0.8;
+  -webkit-transition: -webkit-transform 0.33s;
+  transition: -webkit-transform 0.33s;
+  transition: transform 0.33s;
+  transition: transform 0.33s, -webkit-transform 0.33s;
 }
 
 .faq__article p,
 .faq__article .faq__article-text {
+  margin-top: auto;
+  padding-top: 0.5rem;
   font-size: 9pt;
   font-weight: var(--font-regular, normal);
-  display: none;
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height 0.5s, opacity 1s;
+  transition: height 0.5s, opacity 1s;
+  opacity: 0.1;
 }
 
 .faq__article:hover {
@@ -291,6 +342,8 @@ h1,
 
 .faq__article.active {
   color: var(--darkness-grayish-blue, #444);
+  -webkit-box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
+          box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
 }
 
 .faq__article.active h2,
@@ -306,6 +359,40 @@ h1,
 
 .faq__article.active p,
 .faq__article.active .faq__article-text {
-  display: block;
+  opacity: 1;
+}
+
+/***************************/
+/***	DESKTOP STYLES	***/
+@media screen and (min-width: 1040px) {
+  .faq__component {
+    width: 920px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .faq__decorations {
+    width: 50%;
+  }
+  /***	FAQ MAIN - DSK	***/
+  .faq__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .faq__main .faq__header {
+    text-align: left;
+  }
 }
 /*# sourceMappingURL=style.css.map */
