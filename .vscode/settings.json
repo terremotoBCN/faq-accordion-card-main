@@ -1,4 +1,7 @@
 {
 	"eslint.alwaysShowStatus": true,
-	"eslint.enable": false
+	"eslint.enable": false,
+	"sass.format.enabled": true,
+	"liveSassCompile.settings.watchOnLaunch": true,
+	"liveSassCompile.settings.autoprefix": ""
 }
