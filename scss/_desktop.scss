@@ -1,24 +1,85 @@
 // COMPONENT
 .faq__component {
-    width: 920px;
+	margin: 2rem auto 4rem auto;
 
-    flex-direction: row;
+	width: 920px;
+
+	flex-direction: row;
+
+	background-image: url("../images/bg-pattern-desktop.svg");
+	background-position: -40% center;
+	background-size: 60%;
 }
 
 // DECOTATION
 .faq__decorations {
-    width: 50%;
+	max-width: 50%;
+
+	display: flex;
+	flex-direction: row;
+	align-self: center;
+
+	max-height: 450px;
+
+	justify-content: center;
+	align-items: center;
+
+	.faq__decorations-woman {
+		align-self: center;
+		max-width: unset;
+		width: unset;
+		position: unset;
+		top: unset;
+
+		margin-left: -90px;
+		height: 360px;
+		width: 400px;
+		object-fit: cover;
+		object-position: right center;
+	}
+
+	.faq__decorations-box {
+		width: unset;
+
+		position: absolute;
+		top: 50%;
+		margin-top: -50px;
+		left: -120px;
+		animation: unset;
+
+		animation-duration: 3s;
+		animation-name: box-desktop;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function: ease-in-out;
+	}
+}
+
+@keyframes box-desktop {
+	from {
+		top: 50%;
+	}
+
+	to {
+		top: 40%;
+	}
 }
 
 /***	FAQ MAIN - DSK	***/
 .faq__main {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	// justify-content: flex-start;
+	justify-content: center;
 
-    .faq__header {
-        text-align: left;
-    }
+	max-width: 50%;
+	padding-left: 2rem;
+	padding-right: 2rem;
 
+	.faq__header {
+		text-align: left;
+		// margin-top: 20pt;
+		margin-top: 0pt;
+	}
 }

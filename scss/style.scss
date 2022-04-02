@@ -1,86 +1,77 @@
+@use "sass:meta";
+@use "sass:color";
+
 /*** IMPORT FONTS	***/
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 /***	CSS RESET	***/
 @import "./reset";
 
+//***	SASS VARS	***/
+@import "./variables";
+
 /***	CSS UTILS	***/
 @import "./utils";
 
+/*SASS FUNCTIONS*/
+/*
+$font-weights: (
+	"regular": 400,
+	"bold": 700
+);
+*/
+
 /*	FAQ Accordion Card component	*/
 /*	by FrontEnd Mentor - https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam/hub/faq-accordion-card-L6YA9Ss1X	*/
-
 :root {
-
 	/***	Layouts 	***/
-	--layout-mobile: "375px";
-	--layout-desktop: "1440px";
-
-	--mediaquery-desktop: 1440px;
+	--layout-mobile: #{$layout-mobile};
+	--layout-desktop: #{$layout-desktop};
 
 	/***	Colors	***/
-	--dark-blue: hsl(238, 29%, 16%);
-	--soft-red: hsl(14, 88%, 65%);
-	--soft-violet: hsl(273, 75%, 66%);
-	--soft-blue: hsl(240, 73%, 65%);
+	--dark-blue: #{$dark-blue}; //	hsl(238, 29%, 16%);
+	--soft-red: #{$soft-red}; //	hsl(14, 88%, 65%);
+	--soft-violet: #{$soft-violet}; //	hsl(273, 75%, 66%);
+	--soft-blue: #{$soft-blue}; //	hsl(240, 73%, 65%)
 
 	/***	Gradient	***/
-	--bg-gradient: linear-gradient(0deg, var(--soft-blue), var(--soft-violet));
+	--bg-gradient: linear-gradient(0deg, #{$soft-blue}, #{$soft-violet});
 
 	/***	Neutrals	***/
 	/*	Text	*/
-	--darkness-grayish-blue: hsl(237, 12%, 33%);
-	--dark-grayish-blue: hsl(240, 6%, 50%);
+	--darkness-grayish-blue: #{$darkness-grayish-blue}; //	hsl(237, 12%, 33%)
+	--dark-grayish-blue: #{meta.inspect($dark-grayish-blue)}; //	hsl(240, 6%, 50%)
+	// --dark-grayish-blue666: hsl(#{color.hue($dark-grayish-blue)},#{color.saturation($dark-grayish-blue)},#{color.lightness($dark-grayish-blue)}); //	hsl(240, 6%, 50%)
+	/*	Bg Component	*/
+	--light-grayish: #{$light-grayish}; //	hsl(240, 0%, 95%)
 	/*	Dividers	*/
-	--light-grayish-blue: hsl(240, 5%, 91%);
+	--light-grayish-blue: #{$light-grayish-blue}; //	 hsl(240, 5%, 91%)
 
 	/***	Typography	***/
-	--font-size: 12px;
-	--font-family: 'Kumbh Sans', sans-serif;
-	--font-regular: 400;
-	--font-bold: 700;
-
+	--font-size: #{$font-size};
+	--font-family: #{meta.inspect($font-family)};
+	--font-regular: #{$font-regular};
+	--font-bold: #{$font-bold};
 }
 
 html,
 body {
-	// background-image: var(--bg-gradient, red), url('../design/desktop-design.jpg');
-
-	background-color: var(--soft-blue, hsl(240, 73%, 65%));
+	background-color: var(--soft-blue, #{$soft-blue});
 	background-image: var(--bg-gradient);
-
-	/*	for debbugin	*/
-	// background-image: url(../design/mobile-design.jpg), var(--bg-gradient);
 
 	background-repeat: no-repeat;
 	background-position: center center;
 
-	font-family: var(--font-family, sans-serif);
+	font-family: var(--font-family, $font-family);
 	font-size: var(--font-size, 0.8em);
-	font-weight: var(--font-regular, normal);
+	font-weight: var(--font-regular, #{font-weights(regular)});
 
-	color: var(--light-grayish-blue);
+	color: var(--light-grayish-blue, $light-grayish-blue);
 
 	// display: flex;
 	// justify-content: center;
 	// align-items: center;
 	// flex-direction: column;
-}
-
-body {
-	/*
-	/* for debuggin */
-	/*
-	&:hover
-
-		{
-		background-image: var(--bg-gradient);
-
-		.faq__component {
-			opacity: 1;
-		}
-	}
-	*/
 }
 
 .content__header {
@@ -90,10 +81,12 @@ body {
 	width: 100%;
 	padding: 1rem;
 
-	& .header__theme-switcher>label {
-
+	& .header__theme-switcher > label {
 		cursor: pointer;
 	}
+
+	/*	WIP -Change theme	*/
+	display: none;
 }
 
 .content__main {
@@ -106,10 +99,6 @@ body {
 }
 
 .faq__component {
-
-	/* for debuggin */
-	// opacity: .21;
-
 	margin: 12rem auto 4rem auto;
 	padding: 20pt;
 	width: 328px;
@@ -120,81 +109,84 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	background-color: #fff;
-	background-image: url('../images/bg-pattern-mobile.svg');
+	background-color: var(--light-grayish, $light-grayish);
+	border: 1px solid var(--light-grayish, $light-grayish);
+	background-image: url("../images/bg-pattern-mobile.svg");
 	background-repeat: no-repeat;
 	background-position: top center;
 
 	color: var(--dark-grayish-blue, #444);
 
 	box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue);
+	box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue),
+		2px 2px 3px var(--light-grayish, $light-grayish) inset,
+		5px 5px 4px hsla(0, 0%, 100%, 0.8) inset, -4px -4px 3px inset #eaeaea;
 }
 
 .faq__decorations {
-
 	min-height: 8em;
 	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
 .faq__decorations-woman {
-	width: 240px;
-	text-align: center;
-	margin: auto;
-	display: block;
-	/*! margin-top: -120px; */
+	align-self: center;
+	max-width: 238px;
 	position: absolute;
 	top: -138px;
-	left: 15pt;
 
-	z-index: 2;
-	/*! right: 10pt; */
-	/*! min-width: 210px; */
+	z-index: 20;
 }
 
 .faq__decorations-box {
 	position: absolute;
-	z-index: 5;
-	width: 100px;
-	top: -80px;
-	left: 10px;
+	z-index: 40;
 
+	width: 100px;
+	top: -75px;
+	left: 5px;
+
+	animation-name: box-mobile;
 	animation-duration: 3s;
-	animation-name: slidein;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
 }
 
-
-@keyframes slidein {
+@keyframes box-mobile {
 	from {
-		top: -80px;
+		top: -75px;
 	}
 
 	to {
-		top: -100px;
+		top: -90px;
 	}
 }
 
 /***	FAQ MAIN	***/
+.faq__main {
+	flex-grow: 1;
+}
 
 h1,
 .faq__header {
 	font-size: 24pt;
 	text-align: center;
+	color: var(--darkness-grayish-blue, $darkness-grayish-blue);
 }
 
 .faq__article {
-
 	border-bottom: 1px solid var(--light-grayish-blue, #ddd);
 	color: var(--dark-grayish-blue);
-	padding: 12pt 0;
+	padding: 10pt 0;
 	cursor: pointer;
 
 	transition: box-shadow 1s;
 
 	box-shadow: 0px 0px 0px 0px var(--dark-grayish-blue);
-
-
 
 	h2,
 	.faq__article-title {
@@ -203,11 +195,12 @@ h1,
 		font-weight: var(--font-regular, normal);
 
 		&::after {
-			content: ' ';
+			content: " ";
 			display: block;
 			min-width: 10pt;
 			min-height: 10pt;
-			background: url('../images/icon-arrow-down.svg') transparent no-repeat center bottom;
+			background: url("../images/icon-arrow-down.svg") transparent
+				no-repeat center bottom;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -216,8 +209,7 @@ h1,
 		}
 	}
 
-	p,
-	.faq__article-text {
+	.faq__article-answer {
 		margin-top: auto;
 		padding-top: 0.5rem;
 		font-size: 9pt;
@@ -229,7 +221,6 @@ h1,
 		transition: height 0.5s, opacity 1s;
 
 		opacity: 0.1;
-
 	}
 
 	&:hover {
@@ -247,14 +238,12 @@ h1,
 				background-position-y: 110%;
 			}
 		}
-
 	}
 
-	&.active {
-
+	&.active,
+	&--active {
 		color: var(--darkness-grayish-blue, #444);
 		box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
-
 
 		h2,
 		.faq__article-title {
@@ -265,21 +254,19 @@ h1,
 			}
 		}
 
-		p,
-		.faq__article-text {
+		.faq__article-answer {
 			// display: block;
 			opacity: 1;
 			// height: inherit;
 		}
 	}
-
 }
 
 /***************************/
 /***	DESKTOP STYLES	***/
-@media screen and (min-width: 1040px) {
-
+@media screen and (min-width: $layout-desktop) {
 	@import "./desktop";
-
-
 }
+
+//	****	FOR DEBUGING	****	//
+// @import	"./debugging";

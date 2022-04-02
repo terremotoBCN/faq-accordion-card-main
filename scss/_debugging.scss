@@ -1,0 +1,27 @@
+/*  DEBUGGING   */
+/* for debuggin */
+
+body {
+
+	background-image: url(../design/desktop-design.jpg), var(--bg-gradient);
+	background-position-x: 18px;
+	background-position-y: 134px;
+  
+
+	&:hover
+
+		{
+		background-image: var(--bg-gradient);
+
+		.faq__component {
+			opacity: 1;
+		}
+	}
+	
+}
+
+.faq__component {
+
+	/* for debuggin */
+	 opacity: .21;
+}

@@ -1,48 +1,50 @@
-'use strict'
+"use strict";
 
+// collection of articles
 const faqArticles = document.getElementsByClassName("faq__article");
 
-
-for (var a = 0; a < faqArticles.length; a++) {
-
-    faqArticles[a].addEventListener("click", setActive, false);
-
+// add Event listener
+for (let article of faqArticles) {
+	article.addEventListener("click", setActiveArticle, false);
 }
 
+/* Clear & hidde all active articles */
+function clearActiveArticles() {
+	const elementsActives = document.getElementsByClassName(
+		"faq__article--active"
+	);
 
-async function clearActives() {
-    const elementsActives = document.getElementsByClassName("active");
+	for (let item of elementsActives) {
+		item.classList.remove("faq__article--active");
 
-    for (let item of elementsActives) {
+		const itemText = item.getElementsByClassName("faq__article-answer");
 
-        item.classList.remove("active");
-        // console.log(`remove active options from ${item.id} element`);
-
-        const itemText = item.getElementsByTagName("p");
-        // console.log(`elementos encontrados ${itemText.length}`);
-        for (let item of itemText) {
-            item.removeAttribute("style");
-
-        }
-
-    }
-
-
+		for (let item of itemText) {
+			item.removeAttribute("style");
+		}
+	}
 }
 
+/*  Set active arcticle visible */
+function setActiveArticle(event) {
+	const selArticle = event.currentTarget;
+	const isActive = selArticle.classList.contains("faq__article--active");
 
-function setActive(event) {
-    const selArticle = event.currentTarget;
+	clearActiveArticles();
 
-    const textArticle = selArticle.getElementsByClassName("faq__article-text");
-    // const textArticle2 = event.currentTarget.getElementsByClassName("faq__article-text");
+	if (!isActive) {
+		setActiveArticleElem(selArticle);
+	}
+}
 
-    const isActive = selArticle.classList.contains("active");
+/*  Set & show active article element styles */
+function setActiveArticleElem(articleElem) {
+	const articleAnswer = articleElem.getElementsByClassName(
+		"faq__article-answer"
+	);
+	if (articleAnswer.length > 1)
+		throw new Error("Only one answer per question, please");
 
-    clearActives();
-
-    if (!isActive) {
-        selArticle.classList.add("active");
-        textArticle[0].style.height = `${textArticle[0].scrollHeight}px`;
-    }
+	articleElem.classList.add("faq__article--active");
+	articleAnswer[0].style.height = `${articleAnswer[0].scrollHeight}px`;
 }
