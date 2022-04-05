@@ -2,6 +2,8 @@
 
 This is a solution to the [FAQ accordion card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
+![FAQ accordion component](./screenshots/01%20Screenshot%202022-04-05%20-%20Frontend%20Mentor%20FAQ%20Accordion%20Card.png)
+
 ## Table of contents
 
 -   [Overview](#overview)
@@ -28,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](./design/desktop-preview_01.png)
+![Screenshot](./screenshots/03%20Screenshot%202022-04-05%20-%20Frontend%20Mentor%20FAQ%20Accordion%20Card.png)
 
 ### Links
 
@@ -53,7 +55,7 @@ Users should be able to:
 
 <!-- Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge. -->
 
-This is an entry squeleton to new faq articles:
+This is the squeleton for new faq articles:
 
 ```html
 <article id="article__01" class="faq__article" tabindex="1" accesskey="1">
@@ -103,7 +105,7 @@ $soft-blue: hsl(240, 73%, 65%);
 
 #### JS - Elemet.scrollHeight
 
-With this attribute, [`Elemet.scrollHeight`](https://developer.mozilla.org/es/docs/Web/API/Element/scrollHeight) we achieve the animation to expand the FAQ answers.
+With this attribute, [`Elemet.scrollHeight`](https://developer.mozilla.org/es/docs/Web/API/Element/scrollHeight) we achieve the animation to expand and collapse the FAQ answers.
 
 ```js
 // ./js/behaviour.js
@@ -116,20 +118,37 @@ THX 2 [ Bedimcode ](https://www.youtube.com/watch?v=-ZblPRBjJJw)
 
 ### Continued development
 
-<!-- Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect. -->
+The next step is to convert this FAQ accordion into a web component with the help of [LIT](https://lit.dev), a simple library for building fast, lightweight web components.
 
 ### Useful resources
 
--   [Responsive Accordion](https://youtu.be/-ZblPRBjJJw) - This video has helped me to prepare the project to use Sass / SCSS and how to create the accordion behavior to display the responses.
+-   [Sass](https://sass-lang.com/documentation) - A stylesheet language that’s
+    compiled to CSS
+
+<!-- -   [minireset.css](https://jgthms.com/minireset.css/) - A tiny modern CSS reset -->
+
+-   [ITCSS](https://speakerdeck.com/dafed/managing-css-projects-with-itcss?slide=5) -
+    Managing CSS Projects with ITCSS
+
+-   [BEM](http://getbem.com/) - Block Element Modifier is a methodology that
+    helps you to create reusable components and code sharing in front-end
+    development.
+
+-   [LIT element](https://lit.dev/) - Simple & Fast Web Components.
+
+-   [Responsive Accordion](https://youtu.be/-ZblPRBjJJw) - Video to inspire a Responsive Accordion Ui Design Using HTML CSS & JavaScript.
 
 ---
 
 ## Author
 
--   Website - [terremotoBCN](https://github.com/terremotoBCN)
--   Frontend Mentor - [@terremotoBCN](https://www.frontendmentor.io/profile/terremotoBCN)
+-   Frontend Mentor -
+    [@terremotoBCN](https://www.frontendmentor.io/profile/terremotoBCN)
 -   Twitter - [@terremotoBCN](https://www.twitter.com/terremotoBCN)
-
----
+-   WordPress - [@terremotobcn](https://terremotobcn.wordpress.com/)
+-   Tumblr - [@terremotobcn](https://terremotobcn.tumblr.com/)
 
 ## Acknowledgments
+
+Many thanks to [Frontend Mentor](https://www.frontendmentor.io) and its
+fantastic community that allows us to grow and improve as Frontend developers.
