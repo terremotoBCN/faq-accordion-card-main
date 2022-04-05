@@ -24,11 +24,17 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 
 Users should be able to:
 
--   View the optimal layout for the component depending on their device's screen size
--   See hover states for all interactive elements on the page
--   Hide/Show the answer to a question when the question is clicked
+-   ✔️ View the optimal layout for the component depending on their device's screen size
+-   ✔️ See hover states for all interactive elements on the page
+-   ✔️ Hide/Show the answer to a question when the question is clicked
 
 ### Screenshot
+
+#### 📱 ::Mobile
+
+<img width="280" src="./screenshots/02 Screenshot 2022-04-05 - Frontend Mentor FAQ Accordion Card.png"/>
+
+#### 💻 Desktop
 
 ![Screenshot](./screenshots/03%20Screenshot%202022-04-05%20-%20Frontend%20Mentor%20FAQ%20Accordion%20Card.png)
 
@@ -144,6 +150,7 @@ The next step is to convert this FAQ accordion into a web component with the hel
 
 -   Frontend Mentor -
     [@terremotoBCN](https://www.frontendmentor.io/profile/terremotoBCN)
+-   Github - [@terremotoBCN](https://github.com/terremotoBCN)
 -   Twitter - [@terremotoBCN](https://www.twitter.com/terremotoBCN)
 -   WordPress - [@terremotobcn](https://terremotobcn.wordpress.com/)
 -   Tumblr - [@terremotobcn](https://terremotobcn.tumblr.com/)
