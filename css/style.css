@@ -5,8 +5,7 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove default padding */
@@ -57,8 +56,7 @@ ol[class] {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -83,12 +81,9 @@ select {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
-    -webkit-transition-duration: 0.01ms !important;
-            transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -103,14 +98,14 @@ p {
 
 .attribution {
   font-size: xx-small;
-  color: var(--light-grayish-blue, #e7e7e9);
-  text-shadow: 1px 1px 1px var(--darkness-grayish-blue, #4a4b5e);
+  color: var(--light-grayish-blue, hsl(240deg, 5%, 91%));
+  text-shadow: 1px 1px 1px var(--darkness-grayish-blue, hsl(237deg, 12%, 33%));
   position: fixed;
   bottom: 1rem;
   right: 1rem;
 }
 .attribution > a {
-  color: var(--light-grayish-blue, #e7e7e9);
+  color: var(--light-grayish-blue, hsl(240deg, 5%, 91%));
 }
 
 /*SASS FUNCTIONS*/
@@ -127,20 +122,20 @@ $font-weights: (
   --layout-mobile: 375px;
   --layout-desktop: 1080px;
   /***	Colors	***/
-  --dark-blue: #1d1e35;
-  --soft-red: #f47c57;
-  --soft-violet: #af67e9;
-  --soft-blue: #6565e7;
+  --dark-blue: hsl(238deg, 29%, 16%);
+  --soft-red: hsl(14deg, 88%, 65%);
+  --soft-violet: hsl(273deg, 75%, 66%);
+  --soft-blue: hsl(240deg, 73%, 65%);
   /***	Gradient	***/
-  --bg-gradient: linear-gradient(0deg, #6565e7, #af67e9);
+  --bg-gradient: linear-gradient(0deg, hsl(240deg, 73%, 65%), hsl(273deg, 75%, 66%));
   /***	Neutrals	***/
   /*	Text	*/
-  --darkness-grayish-blue: #4a4b5e;
-  --dark-grayish-blue: #787887;
+  --darkness-grayish-blue: hsl(237deg, 12%, 33%);
+  --dark-grayish-blue: hsl(240deg, 6%, 50%);
   /*	Bg Component	*/
-  --light-grayish: #f2f2f2;
+  --light-grayish: hsl(240deg, 0%, 95%);
   /*	Dividers	*/
-  --light-grayish-blue: #e7e7e9;
+  --light-grayish-blue: hsl(240deg, 5%, 91%);
   /***	Typography	***/
   --font-size: 12px;
   --font-family: "Kumbh Sans", sans-serif;
@@ -150,14 +145,14 @@ $font-weights: (
 
 html,
 body {
-  background-color: var(--soft-blue, #6565e7);
+  background-color: var(--soft-blue, hsl(240deg, 73%, 65%));
   background-image: var(--bg-gradient);
   background-repeat: no-repeat;
   background-position: center center;
   font-family: var(--font-family, "Kumbh Sans", sans-serif);
   font-size: var(--font-size, 0.8em);
   font-weight: var(--font-regular, 400);
-  color: var(--light-grayish-blue, #e7e7e9);
+  color: var(--light-grayish-blue, hsl(240deg, 5%, 91%));
 }
 
 .content__header {
@@ -174,19 +169,10 @@ body {
 }
 
 .content__main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -196,43 +182,28 @@ body {
   width: 328px;
   min-height: 510px;
   border-radius: 20pt;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: var(--light-grayish, #f2f2f2);
-  border: 1px solid var(--light-grayish, #f2f2f2);
+  flex-direction: column;
+  background-color: var(--light-grayish, hsl(240deg, 0%, 95%));
+  border: 1px solid var(--light-grayish, hsl(240deg, 0%, 95%));
   background-image: url("../images/bg-pattern-mobile.svg");
   background-repeat: no-repeat;
   background-position: top center;
   color: var(--dark-grayish-blue, #444);
-  -webkit-box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue);
-          box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue);
-  -webkit-box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue), 2px 2px 3px var(--light-grayish, #f2f2f2) inset, 5px 5px 4px rgba(255, 255, 255, 0.8) inset, -4px -4px 3px inset #eaeaea;
-          box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue), 2px 2px 3px var(--light-grayish, #f2f2f2) inset, 5px 5px 4px rgba(255, 255, 255, 0.8) inset, -4px -4px 3px inset #eaeaea;
+  box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue);
+  box-shadow: 0 30pt 30pt -15pt var(--darkness-grayish-blue), 2px 2px 3px var(--light-grayish, hsl(240deg, 0%, 95%)) inset, 5px 5px 6px hsla(0deg, 0%, 100%, 0.33) inset, -4px -4px 3px inset #eaeaea;
 }
 
 .faq__decorations {
   min-height: 8em;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .faq__decorations-woman {
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   max-width: 238px;
   position: absolute;
   top: -138px;
@@ -245,25 +216,11 @@ body {
   width: 100px;
   top: -75px;
   left: 5px;
-  -webkit-animation-name: box-mobile;
-          animation-name: box-mobile;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes box-mobile {
-  from {
-    top: -75px;
-  }
-  to {
-    top: -90px;
-  }
+  animation-name: box-mobile;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes box-mobile {
@@ -276,16 +233,14 @@ body {
 }
 /***	FAQ MAIN	***/
 .faq__main {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 
 h1,
 .faq__header {
   font-size: 24pt;
   text-align: center;
-  color: var(--darkness-grayish-blue, #4a4b5e);
+  color: var(--darkness-grayish-blue, hsl(237deg, 12%, 33%));
 }
 
 .faq__article {
@@ -293,12 +248,8 @@ h1,
   color: var(--dark-grayish-blue);
   padding: 10pt 0;
   cursor: pointer;
-  -webkit-transition: -webkit-box-shadow 1s;
-  transition: -webkit-box-shadow 1s;
   transition: box-shadow 1s;
-  transition: box-shadow 1s, -webkit-box-shadow 1s;
-  -webkit-box-shadow: 0px 0px 0px 0px var(--dark-grayish-blue);
-          box-shadow: 0px 0px 0px 0px var(--dark-grayish-blue);
+  box-shadow: 0px 0px 0px 0px var(--dark-grayish-blue);
 }
 .faq__article h2,
 .faq__article .faq__article-title {
@@ -317,10 +268,7 @@ h1,
   top: 0;
   right: 0;
   opacity: 0.8;
-  -webkit-transition: -webkit-transform 0.33s;
-  transition: -webkit-transform 0.33s;
   transition: transform 0.33s;
-  transition: transform 0.33s, -webkit-transform 0.33s;
 }
 .faq__article .faq__article-answer {
   margin-top: auto;
@@ -329,14 +277,12 @@ h1,
   font-weight: var(--font-regular, normal);
   height: 0px;
   overflow: hidden;
-  -webkit-transition: height 0.5s, opacity 1s;
   transition: height 0.5s, opacity 1s;
   opacity: 0.1;
 }
 .faq__article:hover {
   color: var(--darkness-grayish-blue, #333);
-  -webkit-box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
-          box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
+  box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
 }
 .faq__article:hover h2::after,
 .faq__article:hover .faq__article-title::after {
@@ -345,8 +291,7 @@ h1,
 }
 .faq__article.active, .faq__article--active {
   color: var(--darkness-grayish-blue, #444);
-  -webkit-box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
-          box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
+  box-shadow: 0px 4px 8px -8px var(--dark-grayish-blue);
 }
 .faq__article.active h2,
 .faq__article.active .faq__article-title, .faq__article--active h2,
@@ -356,8 +301,7 @@ h1,
 .faq__article.active h2::after,
 .faq__article.active .faq__article-title::after, .faq__article--active h2::after,
 .faq__article--active .faq__article-title::after {
-  -webkit-transform: scaleY(-1);
-          transform: scaleY(-1);
+  transform: scaleY(-1);
 }
 .faq__article.active .faq__article-answer, .faq__article--active .faq__article-answer {
   opacity: 1;
@@ -369,37 +313,23 @@ h1,
   .faq__component {
     margin: 2rem auto 4rem auto;
     width: 920px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     background-image: url("../images/bg-pattern-desktop.svg");
-    background-position: -40% center;
-    background-size: 60%;
+    background-position: -90% center;
+    background-size: 70%;
   }
 
   .faq__decorations {
     max-width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-item-align: center;
-        align-self: center;
+    flex-direction: row;
+    align-self: center;
     max-height: 450px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
   }
   .faq__decorations .faq__decorations-woman {
-    -ms-flex-item-align: center;
-        align-self: center;
+    align-self: center;
     max-width: unset;
     width: unset;
     position: unset;
@@ -407,10 +337,8 @@ h1,
     margin-left: -90px;
     height: 360px;
     width: 400px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: right center;
-       object-position: right center;
+    object-fit: cover;
+    object-position: right center;
   }
   .faq__decorations .faq__decorations-box {
     width: unset;
@@ -418,27 +346,12 @@ h1,
     top: 50%;
     margin-top: -50px;
     left: -120px;
-    -webkit-animation: unset;
-            animation: unset;
-    -webkit-animation-duration: 3s;
-            animation-duration: 3s;
-    -webkit-animation-name: box-desktop;
-            animation-name: box-desktop;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-            animation-direction: alternate;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-  }
-
-  @-webkit-keyframes box-desktop {
-    from {
-      top: 50%;
-    }
-    to {
-      top: 40%;
-    }
+    animation: unset;
+    animation-duration: 3s;
+    animation-name: box-desktop;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
   }
 
   @keyframes box-desktop {
@@ -451,19 +364,10 @@ h1,
   }
   /***	FAQ MAIN - DSK	***/
   .faq__main {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
     max-width: 50%;
     padding-left: 2rem;
     padding-right: 2rem;
