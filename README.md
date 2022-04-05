@@ -24,11 +24,17 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 
 Users should be able to:
 
--   View the optimal layout for the component depending on their device's screen size
--   See hover states for all interactive elements on the page
--   Hide/Show the answer to a question when the question is clicked
+-   ✔️ View the optimal layout for the component depending on their device's screen size
+-   ✔️ See hover states for all interactive elements on the page
+-   ✔️ Hide/Show the answer to a question when the question is clicked
 
 ### Screenshot
+
+#### 📱 Mobile
+
+<img width="280" src="./screenshots/02 Screenshot 2022-04-05 - Frontend Mentor FAQ Accordion Card.png"/>
+
+#### 💻 Desktop
 
 ![Screenshot](./screenshots/03%20Screenshot%202022-04-05%20-%20Frontend%20Mentor%20FAQ%20Accordion%20Card.png)
 
@@ -41,33 +47,19 @@ Users should be able to:
 
 ### Built with
 
+-   Mobile-first workflow
 -   Semantic HTML5 markup
 -   CSS3 custom properties
+-   Flexbox Layouts
 -   Powered by Sass/SCSS
     -   ITCSS
     -   BEM
--   Flexbox Layouts
--   Mobile-first workflow
 
 ---
 
 ### What I learned
 
 <!-- Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge. -->
-
-This is the squeleton for new faq articles:
-
-```html
-<article id="article__01" class="faq__article" tabindex="1" accesskey="1">
-	<h2 class="faq__article-title">How many team members can I invite?</h2>
-	<div class="faq__article-answer">
-		<p>
-			You can invite up to 2 additional users on the Free plan. There is
-			no limit on team members for the Premium plan.
-		</p>
-	</div>
-</article>
-```
 
 #### Breaking Change: CSS Variable Syntax
 
@@ -112,7 +104,21 @@ With this attribute, [`Elemet.scrollHeight`](https://developer.mozilla.org/es/do
 53. articleAnswer[0].style.height = `${articleAnswer[0].scrollHeight}px`;
 ```
 
-THX 2 [ Bedimcode ](https://www.youtube.com/watch?v=-ZblPRBjJJw)
+#### HTML - FAQ element component _(WIP)_
+
+This is the skeleton for creating a component for the new FAQ articles:
+
+```html
+<article id="article__01" class="faq__article" tabindex="1" accesskey="1">
+	<h2 class="faq__article-title">How many team members can I invite?</h2>
+	<div class="faq__article-answer">
+		<p>
+			You can invite up to 2 additional users on the Free plan. There is
+			no limit on team members for the Premium plan.
+		</p>
+	</div>
+</article>
+```
 
 ---
 
@@ -136,7 +142,7 @@ The next step is to convert this FAQ accordion into a web component with the hel
 
 -   [LIT element](https://lit.dev/) - Simple & Fast Web Components.
 
--   [Responsive Accordion](https://youtu.be/-ZblPRBjJJw) - Video to inspire a Responsive Accordion Ui Design Using HTML CSS & JavaScript.
+-   [Responsive Accordion](https://youtu.be/-ZblPRBjJJw) - Video to inspire a Responsive Accordion Ui Design Using HTML CSS & JavaScript. - _THX 2 [ Bedimcode ](https://www.youtube.com/watch?v=-ZblPRBjJJw)_
 
 ---
 
@@ -144,6 +150,7 @@ The next step is to convert this FAQ accordion into a web component with the hel
 
 -   Frontend Mentor -
     [@terremotoBCN](https://www.frontendmentor.io/profile/terremotoBCN)
+-   Github - [@terremotoBCN](https://github.com/terremotoBCN)
 -   Twitter - [@terremotoBCN](https://www.twitter.com/terremotoBCN)
 -   WordPress - [@terremotobcn](https://terremotobcn.wordpress.com/)
 -   Tumblr - [@terremotobcn](https://terremotobcn.tumblr.com/)
