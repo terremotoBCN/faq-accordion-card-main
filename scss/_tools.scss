@@ -1,0 +1,6 @@
+//	02 Tools – globally used mixins and functions. It’s important not to output any CSS in the first 2 layers.
+
+//**    FUNCTIONS   **//
+@function font-weights($weight-name) {
+	@return map-get($font-weights, $weight-name);
+}

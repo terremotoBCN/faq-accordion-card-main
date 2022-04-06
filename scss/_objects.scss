@@ -1,0 +1,17 @@
+// 	05  Objects – class-based selectors which define undecorated design patterns, for example the media object known from OOCSS
+/***	OBJECTS	***/
+
+.attribution {
+	font-size: xx-small;
+	color: var(--light-grayish-blue, $light-grayish-blue);
+	text-shadow: 1px 1px 1px
+		var(--darkness-grayish-blue, $darkness-grayish-blue);
+
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+
+	& > a {
+		color: var(--light-grayish-blue, $light-grayish-blue);
+	}
+}
