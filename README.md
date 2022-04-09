@@ -18,6 +18,8 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 -   [Author](#author)
 -   [Acknowledgments](#acknowledgments)
 
+---
+
 ## Overview
 
 ### The challenge
@@ -27,6 +29,10 @@ Users should be able to:
 -   ✔️ View the optimal layout for the component depending on their device's screen size
 -   ✔️ See hover states for all interactive elements on the page
 -   ✔️ Hide/Show the answer to a question when the question is clicked
+
+#### ➕ Dynamic element animation
+
+In plus, I add a [small animation in the box illustration](https://terremotobcn.github.io/faq-accordion-card-main/) to add more dynamism.
 
 ### Screenshot
 
@@ -43,6 +49,8 @@ Users should be able to:
 -   Solution URL: [GitHub Repository](https://github.com/terremotoBCN/faq-accordion-card-main)
 -   Live Site URL: [GitHub Pages](https://terremotobcn.github.io/faq-accordion-card-main/)
 
+---
+
 ## My process
 
 ### Built with
@@ -52,10 +60,9 @@ Users should be able to:
 -   CSS3 custom properties
 -   Flexbox Layouts
 -   Powered by Sass/SCSS
+-   BEMIT Arquitecture
     -   ITCSS
     -   BEM
-
----
 
 ### What I learned
 
