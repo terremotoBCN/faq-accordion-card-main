@@ -5,7 +5,8 @@ const faqArticles = document.getElementsByClassName("faq__article");
 
 // add Event listener
 for (let article of faqArticles) {
-	article.addEventListener("click", setActiveArticle, false);
+	// article.addEventListener("click", setActiveArticle, false);
+	article.addEventListener("focus", setActiveArticle, false);
 }
 
 /* Clear & hidde all active articles */
